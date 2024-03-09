@@ -252,3 +252,27 @@ article img {
 .card-container p {
   margin-top: 5px;
 }
+
+footer {
+  background-color: white;
+  padding: 15px 0 15px 0;
+  color: var(--main-text-color);
+}
+
+footer h2 {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+footer p {
+  font-size: 1.3rem;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-copyright {
+  text-align: right;
+}

@@ -51,11 +51,19 @@
             clip-rule="evenodd" />
         </svg>
       </button>
-      <ul>
+      <ul class="desktop-link">
         <li><a href="#about">Home</a></li>
         <li><a href="#services">Favorite</a></li>
         <li><a href="#contact">About Us</a></li>
       </ul>
+      <section class="drawer">
+        <ul>
+          <li><a href="#about">Home</a></li>
+          <li><a href="#services">Favorite</a></li>
+          <li><a href="#contact">About Us</a></li>
+        </ul>
+      </section>
+      <div class="backdrop"></div>
     </nav>
   </header>
   <main>
@@ -179,6 +187,20 @@
       </div>
     </div>
   </footer>
+  <script>
+    const drawerIcon = document.querySelector('.drawer-icon');
+    const drawer = document.querySelector('.drawer');
+    const backdrop = document.querySelector('.backdrop');
+    drawerIcon.addEventListener('click', () => {
+      drawer.classList.toggle('open');
+      backdrop.classList.toggle('show');
+      event.stopPropagation();
+    });
+    backdrop.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      backdrop.classList.remove('show');
+    });
+  </script>
 </body>
 
 </html>

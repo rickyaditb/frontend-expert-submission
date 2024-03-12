@@ -37,7 +37,7 @@ class HomeHero extends HTMLElement {
         </svg>
         <p>Temukan dengan mudah</p>
         <h2>Restoran Favoritmu</p>
-          <a href="#main-content">Mulai Menjelajah</a>
+          <a href="#main-content" id="home-start">Mulai Menjelajah</a>
       </div>
     </section>
     `;

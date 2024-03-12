@@ -38,7 +38,7 @@ class AppHeader extends HTMLElement {
         </svg>
         <h1>Pawon Tastic</h1>
       </div>
-      <button class="drawer-icon">
+      <button class="drawer-icon" aria-label="Buka menu navigasi untuk perangkat mobile">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
           <path fill-rule="evenodd"
             d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"
@@ -51,10 +51,13 @@ class AppHeader extends HTMLElement {
         <li><a href="https://github.com/rickyaditb" target="_blank">About Us</a></li>
       </ul>
       <section class="drawer">
+        <button class="close-drawer-icon" aria-label="Tutup menu navigasi untuk perangkat mobile" tabindex="-1">
+        X
+        </button>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="#">Favorite</a></li>
-          <li><a href="https://github.com/rickyaditb" target="_blank">About Us</a></li>
+          <li><a href="/" tabindex="-1" id="mobile-home">Home</a></li>
+          <li><a href="#" tabindex="-1" id="mobile-favorite">Favorite</a></li>
+          <li><a href="https://github.com/rickyaditb" target="_blank" tabindex="-1" id="mobile-about">About Us</a></li>
         </ul>
       </section>
       <div class="backdrop"></div>

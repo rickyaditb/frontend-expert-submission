@@ -56,6 +56,11 @@ input[type="reset"] {
   outline: inherit;
 }
 
+button:focus-visible {
+  outline: 2px solid var(--main-text-color);
+  outline-offset: 2px;
+}
+
 /* Styling Utama */
 
 :root {
@@ -324,9 +329,17 @@ nav .desktop-link {
   padding: 8px;
   z-index: 100;
 }
- 
+
 .skip-link:focus {
-   top: 0;
+  top: 0;
+}
+
+.close-drawer-icon {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-weight: 900;
+  font-size: 2rem;
 }
 
 .drawer {
@@ -412,6 +425,10 @@ nav .desktop-link {
   .footer-copyright {
     text-align: right;
   }
+
+  .drawer {
+    display: none;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -429,4 +446,3 @@ nav .desktop-link {
     min-width: 1000px;
   }
 }
-

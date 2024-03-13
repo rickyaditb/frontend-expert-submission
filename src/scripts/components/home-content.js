@@ -9,7 +9,7 @@ class HomeContent extends HTMLElement {
   async _fetchData() {
     this._restaurant = JSON.parse(localStorage.getItem('restaurant-list'));
     if (!this._restaurant) {
-      this._restaurant = JSON.parse(JSON.stringify(restaurantData['restaurants']));
+      this._restaurant = JSON.parse(JSON.stringify(restaurantData.restaurants));
       localStorage.setItem('restaurant-list', JSON.stringify(this._restaurant));
     }
   }

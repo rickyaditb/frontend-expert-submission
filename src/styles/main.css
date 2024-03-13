@@ -56,15 +56,15 @@ input[type="reset"] {
   outline: inherit;
 }
 
-button:focus-visible {
-  outline: 2px solid var(--main-text-color);
-  outline-offset: 2px;
-}
-
 /* Styling Utama */
 
 :root {
   --main-text-color: #9f7aea;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--main-text-color);
+  outline-offset: 2px;
 }
 
 body {

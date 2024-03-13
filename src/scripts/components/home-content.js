@@ -21,7 +21,7 @@ class HomeContent extends HTMLElement {
       <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, earum!</p>
       <section id="catalog">
         ${this._restaurant.map((item) => `
-        <a onclick="alert('Fitur belum diterapkan !');">
+        <a href="#main-content" onclick="alert('Fitur belum diterapkan !');" aria-label="Detail Restoran ${item.name}">
           <article id="${item.id}">
             <div class="thumbnail-container">
               <img src="${item.pictureId}" alt="Gambar Restoran ${item.name}">

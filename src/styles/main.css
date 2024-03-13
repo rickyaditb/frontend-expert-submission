@@ -258,10 +258,6 @@ article img {
   height: 20px;
 }
 
-.star {
-  font-size: 1.5rem;
-}
-
 .card-container h3 {
   font-weight: bold;
   margin-top: -10px;
@@ -393,6 +389,11 @@ nav .desktop-link {
   -webkit-line-clamp: 3;
   line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+.star {
+  font-size: 1.5rem;
+  overflow: hidden;
 }
 
 @media (min-width: 640px) {

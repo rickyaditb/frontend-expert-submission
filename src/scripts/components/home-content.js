@@ -31,7 +31,9 @@ class HomeContent extends HTMLElement {
               <p class="truncate">${item.description}</p>
             </div>
             <div class="card-stats">
-              <div class="star">★★★★★</div>
+              <div class="star-container">
+                <div class="star" style="width: ${(item.rating / 5) * 100}%">★★★★★</div>
+              </div>
               <div class="city">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="city-icon">
                   <path fill-rule="evenodd"

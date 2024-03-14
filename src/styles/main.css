@@ -58,6 +58,13 @@ input[type="reset"] {
 
 /* Styling Utama */
 
+li a {
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 :root {
   --main-text-color: #9f7aea;
 }
@@ -298,6 +305,11 @@ footer .container {
   padding: 15px 25px;
 }
 
+li {
+  display: flex;
+  align-items: start;
+}
+
 nav .desktop-link {
   display: none;
   justify-content: space-between;
@@ -309,7 +321,8 @@ nav .desktop-link {
 
 .drawer-icon {
   display: block;
-  width: 40px;
+  width: 45px;
+  height: 45px;
 }
 
 .footer-about {
@@ -318,12 +331,13 @@ nav .desktop-link {
 
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: -80px;
   left: 0;
   background-color: var(--main-text-color);
   color: white;
-  padding: 8px;
+  padding: 20px;
   z-index: 100;
+  font-weight: bold;
 }
 
 .skip-link:focus {
@@ -333,9 +347,11 @@ nav .desktop-link {
 .close-drawer-icon {
   position: absolute;
   top: 25px;
-  right: 35px;
+  right: 25px;
   font-weight: 900;
   font-size: 2rem;
+  width: 45px;
+  height: 45px;
 }
 
 .drawer {

@@ -4,7 +4,7 @@ import './utils/shell-loader';
 
 import App from './views/app';
 import {
-  drawerIcon, closeDrawerIcon, backdrop, drawer,
+  drawerIcon, closeDrawerIcon, backdrop, drawer, content,
 } from './utils/element-selector';
 import skippedElements from './utils/element-to-skip-from-tab-index';
 
@@ -15,4 +15,13 @@ const app = new App({
   backdrop,
   drawer,
   skippedElements,
+  content,
 });
+
+// window.addEventListener('hashchange', () => {
+//   app.renderPage();
+// });
+
+// window.addEventListener('load', () => {
+//   app.renderPage();
+// });

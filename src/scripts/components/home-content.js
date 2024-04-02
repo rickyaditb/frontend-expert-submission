@@ -16,8 +16,8 @@ class HomeContent extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <section id="main-content" class="container">
-      <h2>Katalog Restoran Kami</h2>
+    <section id="main-content" class="container home-content">
+      <h2 class="caption">Katalog Restoran Kami</h2>
       <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, earum!</p>
       <section id="catalog">
         ${this._restaurant.map((item) => `

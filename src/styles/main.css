@@ -169,7 +169,7 @@ nav h1 {
   margin-top: 20px;
 }
 
-#main-content {
+.home-content {
   color: #5b6779;
   text-align: center;
   margin-top: 50px;
@@ -182,7 +182,7 @@ nav h1 {
   font-size: 1.4rem;
 }
 
-#main-content h2 {
+#main-content .caption {
   text-align: center;
   font-weight: 600;
   font-size: 2rem;
@@ -412,6 +412,199 @@ nav .desktop-link {
   overflow: hidden;
 }
 
+.detail-thumb-container {
+  grid-column: span 12 / span 12;
+}
+
+.detail-container {
+  grid-column: span 12 / span 12;
+}
+
+.detail-menu-container {
+  grid-column: span 6 / span 6;
+}
+
+.detail-comment-info-container {
+  grid-column: span 12 / span 12;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  color: #5b6779;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-comment-info-container h2 {
+  font-weight: 600;
+}
+
+.detail-comment-info-container button {
+  background-color: var(--main-text-color);
+  padding: 10px 15px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+.detail-comment-container {
+  grid-column: span 12 / span 12;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, minmax(0, 3fr));
+}
+
+.detail-thumb {
+  padding: 5px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.detail-thumb-img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.detail {
+  background-color: white;
+  padding: 25px 25px 20px 25px;
+  border-radius: 10px;
+  color: #5b6779;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.detail-like {
+  background-color: var(--main-text-color);
+  padding: 15px;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.detail-content {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.detail-content div {
+  min-height: 0
+}
+
+.detail h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.titles {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.titles p {
+  font-size: 1.5rem;
+}
+
+.detail-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.detail-menu {
+  background-color: white;
+  padding: 15px;
+  color: #5b6779;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.detail-menu h2 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.detail-menu ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 4fr));
+  gap: 10px;
+}
+
+.detail-menu li {
+  background-color: #e4e4e4;
+  padding: 13px 5px;
+  justify-content: center;
+}
+
+.detail-category ul {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-category li {
+  background-color: var(--main-text-color);
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  padding: 10px 15px;
+  justify-content: center;
+}
+
+.detail .city {
+  margin-bottom: 10px;
+}
+
+.detail-comment {
+  background-color: white;
+  color: #5b6779;
+  padding: 15px 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.detail-comment-desc {
+  margin-top: 15px;
+
+}
+
+.detail-comment-head {
+  display: flex;
+  align-items: center;
+}
+
+.detail-comment-head .initial {
+  background-color: var(--main-text-color);
+  color: white;
+  padding: 8px 12px;
+  font-weight: 600;
+  border-radius: 100%;
+  font-size: 1.2rem;
+  align-self: flex-start;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+
+.detail-comment-head .name {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.detail-comment-head .date {
+  font-size: 1.1rem;
+  margin-left: auto;
+}
+
 @media (min-width: 640px) {
   #catalog {
     grid-template-columns: 1fr 1fr;
@@ -445,6 +638,14 @@ nav .desktop-link {
 
   .drawer {
     display: none;
+  }
+
+  .detail-thumb-container {
+    grid-column: span 4 / span 4;
+  }
+
+  .detail-container {
+    grid-column: span 8 / span 8;
   }
 }
 

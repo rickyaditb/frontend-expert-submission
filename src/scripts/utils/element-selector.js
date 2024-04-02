@@ -1,5 +1,5 @@
-const [drawerIcon, closeDrawerIcon, drawer, backdrop, homeStart] = ['.drawer-icon', '.close-drawer-icon', '.drawer', '.backdrop', '#home-start'].map((s) => document.querySelector(s));
+const [drawerIcon, closeDrawerIcon, drawer, backdrop, homeStart, content] = ['.drawer-icon', '.close-drawer-icon', '.drawer', '.backdrop', '#home-start', 'main'].map((s) => document.querySelector(s));
 
 export {
-  drawerIcon, closeDrawerIcon, drawer, backdrop, homeStart,
+  drawerIcon, closeDrawerIcon, drawer, backdrop, homeStart, content,
 };

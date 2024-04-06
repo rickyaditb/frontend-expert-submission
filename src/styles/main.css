@@ -550,6 +550,9 @@ nav .desktop-link {
   background-color: #e4e4e4;
   padding: 13px 5px;
   justify-content: center;
+  display: flex;
+  text-align: center;
+  align-items: center;
 }
 
 .detail-category ul {

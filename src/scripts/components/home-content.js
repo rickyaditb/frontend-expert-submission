@@ -1,4 +1,5 @@
-import restaurantData from '../../public/data/DATA.json';
+import DicodingSource from '../data/dicoding-source';
+import CONFIG from '../globals/config';
 
 class HomeContent extends HTMLElement {
   async connectedCallback() {
@@ -7,11 +8,7 @@ class HomeContent extends HTMLElement {
   }
 
   async _fetchData() {
-    this._restaurant = JSON.parse(localStorage.getItem('restaurant-list'));
-    if (!this._restaurant) {
-      this._restaurant = JSON.parse(JSON.stringify(restaurantData.restaurants));
-      localStorage.setItem('restaurant-list', JSON.stringify(this._restaurant));
-    }
+    this._restaurant = await DicodingSource.allRestaurant();
   }
 
   render() {
@@ -21,10 +18,10 @@ class HomeContent extends HTMLElement {
       <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, earum!</p>
       <section id="catalog">
         ${this._restaurant.map((item) => `
-        <a href="#main-content" onclick="alert('Fitur belum diterapkan !');" aria-label="Detail Restoran ${item.name}">
+        <a href="#/detail/${item.id}" aria-label="Detail Restoran ${item.name}">
           <article id="${item.id}">
             <div class="thumbnail-container">
-              <img src="${item.pictureId}" alt="Gambar Restoran ${item.name}">
+              <img src="${CONFIG.BASE_IMAGE_URL + item.pictureId}" alt="Gambar Restoran ${item.name}">
             </div>
             <div class="card-container">
               <h3>${item.name}</h3>

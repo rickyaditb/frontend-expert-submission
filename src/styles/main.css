@@ -81,6 +81,9 @@ body {
   font-style: normal;
   font-variation-settings:
     "slnt" 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -183,6 +186,7 @@ nav h1 {
 }
 
 #main-content .caption {
+  margin-top: 25px;
   text-align: center;
   font-weight: 600;
   font-size: 2rem;
@@ -276,6 +280,7 @@ article img {
 }
 
 footer {
+  margin-top: auto;
   background-color: white;
   padding: 15px 0 15px 0;
   color: var(--main-text-color);
@@ -603,6 +608,23 @@ nav .desktop-link {
 .detail-comment-head .date {
   font-size: 1.1rem;
   margin-left: auto;
+}
+
+.favorit-bar {
+  color: #5b6779;
+  background-color: white;
+  padding: 15px 25px;
+  font-weight: 600;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.sort-icon {
+  width: 40px;
 }
 
 @media (min-width: 640px) {

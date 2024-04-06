@@ -18,10 +18,10 @@ const app = new App({
   content,
 });
 
-// window.addEventListener('hashchange', () => {
-//   app.renderPage();
-// });
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-// window.addEventListener('load', () => {
-//   app.renderPage();
-// });
+window.addEventListener('load', () => {
+  app.renderPage();
+});

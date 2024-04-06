@@ -1,7 +1,7 @@
-const DetailPage = {
+const FavoritePage = {
   async render() {
     return `
-      <detail-content></detail-content>
+      <favorite-content></favorite-content>
     `;
   },
 
@@ -10,4 +10,4 @@ const DetailPage = {
   },
 };
 
-export default DetailPage;
+export default FavoritePage;

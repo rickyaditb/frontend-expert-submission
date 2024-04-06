@@ -46,8 +46,8 @@ class AppHeader extends HTMLElement {
         </svg>
       </button>
       <ul class="desktop-link">
-        <li><a href="/">Home</a></li>
-        <li><a href="#">Favorite</a></li>
+        <li><a href="/#/">Home</a></li>
+        <li><a href="/#/favorite">Favorite</a></li>
         <li><a href="https://github.com/rickyaditb" target="_blank">About Us</a></li>
       </ul>
       <section class="drawer">

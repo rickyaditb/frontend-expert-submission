@@ -136,7 +136,7 @@ class DetailContent extends HTMLElement {
       </div>
       <div class="detail-comment-info-container">
         <h2>📝 Ulasan - Ulasan</h2>
-        <button class="show-comment">Tulis Komentar</button>
+        <button class="show-comment" aria-label="Tampilkan Form Komentar">Tulis Komentar</button>
       </div>
       <div class="detail-comment-container">
         <div class="add-comment">
@@ -144,7 +144,7 @@ class DetailContent extends HTMLElement {
           <input type="text" class="add-comment-name" placeholder="Ketik Nama Kamu Disini">
           <label for="add-comment-desc" class="add-comment-label">Ulasan</label>
           <textarea class="add-comment-desc" placeholder="Ketik Ulasan Kamu Disini"></textarea>
-          <button class="add-comment-submit" id="submit">Kirim</button>
+          <button class="add-comment-submit" id="submit" aria-label="Kirim Komentar">Kirim</button>
         </div>
       ${this._restaurant.customerReviews.map((item) => `
         <div class="detail-comment">

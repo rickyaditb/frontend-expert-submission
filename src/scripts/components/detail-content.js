@@ -54,6 +54,8 @@ class DetailContent extends HTMLElement {
     }
     await this._fetchData();
     this.render();
+    this._afterRender();
+    new Toast('Review Berhasil Dikirim').show();
   }
 
   // eslint-disable-next-line class-methods-use-this

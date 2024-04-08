@@ -510,10 +510,14 @@ nav .desktop-link {
   font-size: 1.3rem;
   border-radius: 5px;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .detail-liked {
-  background-color: red;
+  background-color: var(--main-text-color);
   padding: 15px;
   width: 100%;
   color: white;
@@ -521,6 +525,10 @@ nav .desktop-link {
   font-size: 1.3rem;
   border-radius: 5px;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .detail-content {
@@ -668,6 +676,10 @@ nav .desktop-link {
   z-index: 1000;
   font-size: 14px;
   text-align: center;
+}
+
+.like-icon {
+  width: 1.6rem;
 }
 
 .detail-comment-head .initial {

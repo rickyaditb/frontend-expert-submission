@@ -1,5 +1,6 @@
 import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 import { createLikeButtonTemplate, createLikedButtonTemplate } from '../components/detail-like';
+import Toast from '../components/app-toast';
 
 const LikeButtonInitiator = {
   async init({ likeButtonContainer, restaurant }) {
@@ -30,6 +31,7 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
+      new Toast('Restoran Berhasil Ditambah Ke Favorite').show();
       this._renderButton();
     });
   },
@@ -40,6 +42,7 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
+      new Toast('Restoran Berhasil Dihapus Dari Favorite').show();
       this._renderButton();
     });
   },

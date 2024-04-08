@@ -111,7 +111,7 @@ nav {
   color: var(--main-text-color);
 }
 
-nav div {
+nav .main-logo {
   display: flex;
   align-items: center;
   gap: 15px;

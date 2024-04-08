@@ -6,7 +6,7 @@ class AppHeader extends HTMLElement {
   render() {
     this.innerHTML = `
     <nav class="container">
-      <div>
+      <a href="/#/" class="main-logo">
         <svg class="logo" fill="#9f7aea" height="200px" width="200px" version="1.1" id="Layer_1"
           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.999 511.999"
           xml:space="preserve">
@@ -37,7 +37,7 @@ class AppHeader extends HTMLElement {
           </g>
         </svg>
         <h1>Pawon Tastic</h1>
-      </div>
+      </a>
       <button class="drawer-icon" aria-label="Buka menu navigasi untuk perangkat mobile">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
           <path fill-rule="evenodd"

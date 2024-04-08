@@ -135,7 +135,7 @@ class DetailContent extends HTMLElement {
         </div>
       </div>
       <div class="detail-comment-info-container">
-        <h2>📝 Ulasan - Ulasan</h2>
+        <h2>📝 Ulasan</h2>
         <button class="show-comment" aria-label="Tampilkan Form Komentar">Tulis Komentar</button>
       </div>
       <div class="add-comment">

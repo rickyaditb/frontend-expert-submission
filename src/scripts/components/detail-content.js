@@ -2,6 +2,7 @@ import UrlParser from '../routes/url-parser';
 import DicodingSource from '../data/dicoding-source';
 import CONFIG from '../globals/config';
 import LikeButtonInitiator from '../utils/like-button-initiator';
+import Toast from './app-toast';
 
 class DetailContent extends HTMLElement {
   async connectedCallback() {
@@ -11,27 +12,66 @@ class DetailContent extends HTMLElement {
   }
 
   async _fetchData() {
+    new Toast('Memuat Data...', 1000).show();
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     this._restaurant = await DicodingSource.detilRestaurant(url.id);
+    if (!this._restaurant) {
+      new Toast('Data Gagal Dimuat').show();
+      return;
+    }
+    setTimeout(() => {
+      new Toast('Data Berhasil Dimuat', 500).show();
+    }, 1000);
+  }
+
+  _createRestaurantObject() {
+    return {
+      id: this._restaurant.id,
+      name: this._restaurant.name,
+      description: this._restaurant.description,
+      city: this._restaurant.city,
+      address: this._restaurant.address,
+      pictureId: this._restaurant.pictureId,
+      categories: this._restaurant.categories,
+      menus: this._restaurant.menus,
+      rating: this._restaurant.rating,
+      customerReviews: this._restaurant.customerReviews,
+    };
+  }
+
+  async _submitButtonClickHandler() {
+    const name = document.querySelector('.add-comment-name').value;
+    const desc = document.querySelector('.add-comment-desc').value;
+    const data = {
+      id: this._restaurant.id,
+      name,
+      review: desc,
+    };
+    const reviewResponse = await DicodingSource.addReview(data);
+    if (!reviewResponse) {
+      new Toast('Review Gagal Dikirim').show();
+      return;
+    }
+    await this._fetchData();
+    this.render();
   }
 
   // eslint-disable-next-line class-methods-use-this
+  _toggleCommentForm() {
+    const addComment = document.querySelector('.add-comment');
+    addComment.classList.toggle('show');
+  }
+
   _afterRender() {
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      restaurant: {
-        id: this._restaurant.id,
-        name: this._restaurant.name,
-        description: this._restaurant.description,
-        city: this._restaurant.city,
-        address: this._restaurant.address,
-        pictureId: this._restaurant.pictureId,
-        categories: this._restaurant.categories,
-        menus: this._restaurant.menus,
-        rating: this._restaurant.rating,
-        customerReviews: this._restaurant.customerReviews,
-      },
+      restaurant: this._createRestaurantObject(),
     });
+
+    const showCommentButton = document.querySelector('.show-comment');
+    showCommentButton.addEventListener('click', () => this._toggleCommentForm());
+    const submitButton = document.getElementById('submit');
+    submitButton.addEventListener('click', () => this._submitButtonClickHandler());
   }
 
   render() {
@@ -94,9 +134,16 @@ class DetailContent extends HTMLElement {
       </div>
       <div class="detail-comment-info-container">
         <h2>📝 Ulasan - Ulasan</h2>
-        <button>Tulis Komentar</button>
+        <button class="show-comment">Tulis Komentar</button>
       </div>
       <div class="detail-comment-container">
+        <div class="add-comment">
+          <label for="add-comment-name" class="add-comment-label">Nama</label>
+          <input type="text" class="add-comment-name" placeholder="Ketik Nama Kamu Disini">
+          <label for="add-comment-desc" class="add-comment-label">Ulasan</label>
+          <textarea class="add-comment-desc" placeholder="Ketik Ulasan Kamu Disini"></textarea>
+          <button class="add-comment-submit" id="submit">Kirim</button>
+        </div>
       ${this._restaurant.customerReviews.map((item) => `
         <div class="detail-comment">
           <div class="detail-comment-head">

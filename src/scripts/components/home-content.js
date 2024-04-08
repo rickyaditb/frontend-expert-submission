@@ -1,5 +1,6 @@
 import DicodingSource from '../data/dicoding-source';
 import appCard from './app-card';
+import Toast from './app-toast';
 
 class HomeContent extends HTMLElement {
   async connectedCallback() {
@@ -9,7 +10,15 @@ class HomeContent extends HTMLElement {
   }
 
   async _fetchData() {
+    new Toast('Memuat Data...', 1000).show();
     this._restaurant = await DicodingSource.allRestaurant();
+    if (!this._restaurant) {
+      new Toast('Data Gagal Dimuat').show();
+      return;
+    }
+    setTimeout(() => {
+      new Toast('Data Berhasil Dimuat', 500).show();
+    }, 1000);
   }
 
   render() {

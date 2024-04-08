@@ -56,6 +56,19 @@ input[type="reset"] {
   outline: inherit;
 }
 
+textarea, input[type="text"] {
+  font-family: inherit;
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: vertical;
+}
+
 /* Styling Utama */
 
 li a {
@@ -199,15 +212,21 @@ nav h1 {
 }
 
 article {
+  color: #5b6779;
   position: relative;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transition: 0.3s;
   border: var(--main-text-color) 1px solid;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   text-align: left;
   overflow: hidden;
   cursor: pointer;
+}
+
+.card-shadow {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  border: rgb(224, 224, 224) 1px solid;
 }
 
 article:hover {
@@ -400,7 +419,7 @@ nav .desktop-link {
 }
 
 .show {
-  display: block;
+  display: block!important;
 }
 
 .truncate {
@@ -602,6 +621,55 @@ nav .desktop-link {
   align-items: center;
 }
 
+.add-comment {
+  display: none;
+  grid-column: span 3 / span 3;
+  background-color: white;
+  color: #5b6779;
+  padding: 15px 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.add-comment-desc, .add-comment-name {
+  display: block;
+  width: 100%;
+  background-color: #f3f4f6;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0px 0 15px 0;
+  font-size: 1rem;
+}
+
+.add-comment-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.add-comment-submit {
+  background-color: var(--main-text-color);
+  padding: 10px 15px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--main-text-color);
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  font-size: 14px;
+  text-align: center;
+}
+
 .detail-comment-head .initial {
   background-color: var(--main-text-color);
   color: white;
@@ -634,7 +702,7 @@ nav .desktop-link {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 .sort-icon {
@@ -682,6 +750,10 @@ nav .desktop-link {
 
   .detail-container {
     grid-column: span 8 / span 8;
+  }
+
+  .add-comment-submit {
+    width: fit-content;
   }
 }
 

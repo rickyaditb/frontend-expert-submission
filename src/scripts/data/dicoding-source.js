@@ -12,6 +12,19 @@ class DicodingSource {
     const responseJson = await response.json();
     return responseJson.restaurant;
   }
+
+  static async addReview(data) {
+    const response = await fetch(API_ENDPOINT.ADD_REVIEW, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Auth-Token': '12345',
+      },
+      body: JSON.stringify(data),
+    });
+    const responseJson = await response.json();
+    return responseJson.customerReviews;
+  }
 }
 
 export default DicodingSource;

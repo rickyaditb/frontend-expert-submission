@@ -445,7 +445,7 @@ nav .desktop-link {
 }
 
 .detail-menu-container {
-  grid-column: span 6 / span 6;
+  grid-column: span 12 / span 12;
 }
 
 .detail-comment-info-container {
@@ -477,7 +477,7 @@ nav .desktop-link {
   grid-column: span 12 / span 12;
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(3, minmax(0, 3fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .detail-thumb {
@@ -580,7 +580,7 @@ nav .desktop-link {
 
 .detail-menu ul {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 4fr));
+  grid-template-columns: repeat(2, minmax(0, 2fr));
   gap: 10px;
 }
 
@@ -631,12 +631,13 @@ nav .desktop-link {
 
 .add-comment {
   display: none;
-  grid-column: span 3 / span 3;
+  grid-column: span 12 / span 12;
   background-color: white;
   color: #5b6779;
   padding: 15px 15px;
   border-radius: 10px;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  width: 100%;
 }
 
 .add-comment-desc, .add-comment-name {
@@ -767,6 +768,16 @@ nav .desktop-link {
   .add-comment-submit {
     width: fit-content;
   }
+
+  .detail-menu-container {
+    grid-column: span 6 / span 6;
+  }
+
+  .detail-menu ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 2fr));
+    gap: 10px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -776,6 +787,19 @@ nav .desktop-link {
 
   .container {
     padding: 15px 100px;
+  }
+
+  .detail-menu ul {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 4fr));
+    gap: 10px;
+  }
+
+  .detail-comment-container {
+    grid-column: span 12 / span 12;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, minmax(0, 2fr));
   }
 }
 

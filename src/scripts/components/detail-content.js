@@ -1,16 +1,37 @@
 import UrlParser from '../routes/url-parser';
 import DicodingSource from '../data/dicoding-source';
 import CONFIG from '../globals/config';
+import LikeButtonInitiator from '../utils/like-button-initiator';
 
 class DetailContent extends HTMLElement {
   async connectedCallback() {
     await this._fetchData();
     this.render();
+    this._afterRender();
   }
 
   async _fetchData() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     this._restaurant = await DicodingSource.detilRestaurant(url.id);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  _afterRender() {
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {
+        id: this._restaurant.id,
+        name: this._restaurant.name,
+        description: this._restaurant.description,
+        city: this._restaurant.city,
+        address: this._restaurant.address,
+        pictureId: this._restaurant.pictureId,
+        categories: this._restaurant.categories,
+        menus: this._restaurant.menus,
+        rating: this._restaurant.rating,
+        customerReviews: this._restaurant.customerReviews,
+      },
+    });
   }
 
   render() {
@@ -20,7 +41,7 @@ class DetailContent extends HTMLElement {
         <div class="detail-thumb">
           <img src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="Gambar Restoran ${this._restaurant.name}" class="detail-thumb-img">
         </div>
-        <button class="detail-like">Bookmark Restoran</button>
+        <div id="likeButtonContainer"></div>
       </div>
       <div class="detail-container">
         <div class="detail">

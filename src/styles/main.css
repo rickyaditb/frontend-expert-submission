@@ -493,6 +493,17 @@ nav .desktop-link {
   margin-top: 10px;
 }
 
+.detail-liked {
+  background-color: red;
+  padding: 15px;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
 .detail-content {
   display: grid;
   gap: 15px;

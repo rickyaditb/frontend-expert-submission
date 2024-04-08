@@ -466,7 +466,7 @@ nav .desktop-link {
 
 .detail-comment-info-container button {
   background-color: var(--main-text-color);
-  padding: 10px 15px;
+  padding: 13px 18px;
   color: white;
   font-weight: 600;
   font-size: 1.1rem;
@@ -657,7 +657,7 @@ nav .desktop-link {
 
 .add-comment-submit {
   background-color: var(--main-text-color);
-  padding: 10px 15px;
+  padding: 13px 18px;
   color: white;
   font-weight: 600;
   font-size: 1.1rem;

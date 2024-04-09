@@ -78,7 +78,7 @@ class DetailContent extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <section id="main-content" class="container detail-content">
+    <section id="main-content" class="container detail-content" tabindex="0">
       <div class="detail-thumb-container">
         <div class="detail-thumb">
           <img src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="Gambar Restoran ${this._restaurant.name}" class="detail-thumb-img">

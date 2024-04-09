@@ -23,7 +23,7 @@ class HomeContent extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <section id="main-content" class="container home-content">
+    <section id="main-content" class="container home-content" tabindex="0">
       <h2 class="caption">Katalog Restoran Kami</h2>
       <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, earum!</p>
       <section id="catalog">

@@ -3,6 +3,7 @@ import DicodingSource from '../data/dicoding-source';
 import CONFIG from '../globals/config';
 import LikeButtonPresenter from '../utils/like-button-presenter';
 import Toast from './app-toast';
+import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 
 class DetailContent extends HTMLElement {
   async connectedCallback() {
@@ -67,6 +68,7 @@ class DetailContent extends HTMLElement {
   _afterRender() {
     LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: this._createRestaurantObject(),
     });
 

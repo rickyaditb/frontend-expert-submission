@@ -1,7 +1,7 @@
 import UrlParser from '../routes/url-parser';
 import DicodingSource from '../data/dicoding-source';
 import CONFIG from '../globals/config';
-import LikeButtonInitiator from '../utils/like-button-initiator';
+import LikeButtonPresenter from '../utils/like-button-presenter';
 import Toast from './app-toast';
 
 class DetailContent extends HTMLElement {
@@ -65,7 +65,7 @@ class DetailContent extends HTMLElement {
   }
 
   _afterRender() {
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: this._createRestaurantObject(),
     });

@@ -1,6 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const { merge } = require('webpack-merge');
 const path = require('path');
+// eslint-disable-next-line prefer-destructuring
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -17,4 +19,7 @@ module.exports = merge(common, {
       },
     },
   },
+  plugins: [
+    new BundleAnalyzerPlugin(),
+  ],
 });

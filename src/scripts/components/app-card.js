@@ -5,9 +5,9 @@ const cardTemplate = (restaurant) => `
     <article id="${restaurant.id}">
       <div class="thumbnail-container">
         <picture>
-          <source media="(max-width: 600px)" srcset="${`${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}`}">
-          <source media="(max-width: 1280px)" srcset="${`${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}`}">
-          <img class="lazyload" src="${`${CONFIG.BASE_IMAGE_URL}large/${restaurant.pictureId}`}" alt="Gambar Restoran ${restaurant.name}">
+          <source media="(max-width: 600px)" data-srcset="${`${CONFIG.BASE_IMAGE_URL}small/${restaurant.pictureId}`}">
+          <source media="(max-width: 1280px)" data-srcset="${`${CONFIG.BASE_IMAGE_URL}medium/${restaurant.pictureId}`}">
+          <img class="lazyload" data-src="${`${CONFIG.BASE_IMAGE_URL}large/${restaurant.pictureId}`}" alt="Gambar Restoran ${restaurant.name}">
         </picture>
       </div>
       <div class="card-container">

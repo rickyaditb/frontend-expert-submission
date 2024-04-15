@@ -137,7 +137,7 @@ nav h1 {
 
 #hero {
   height: 500px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../public/images/heros/hero-image_2.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../public/images/heros/hero-image_2-small.jpg');
   background-size: cover;
   background-position: center;
   color: white;
@@ -818,6 +818,19 @@ nav .desktop-link {
     display: grid;
     gap: 15px;
     grid-template-columns: repeat(2, minmax(0, 2fr));
+  }
+  /* Menerapkan teknik image responsive pada gambar hero. Resolusi gambar pada layar seluler dan desktop berbeda. */
+  #hero {
+    height: 500px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../public/images/heros/hero-image_2-large.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-color: var(--main-text-color);
+    border-top: 5px solid var(--main-text-color);
+    border-bottom: 5px solid var(--main-text-color);
+    /* Requirement Wajib */
+    width: 100%;
   }
 }
 

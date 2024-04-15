@@ -4,7 +4,7 @@ const cardTemplate = (restaurant) => `
   <a href="#/detail/${restaurant.id}" aria-label="Detail Restoran ${restaurant.name}">
     <article id="${restaurant.id}">
       <div class="thumbnail-container">
-        <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
+        <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Gambar Restoran ${restaurant.name}">
       </div>
       <div class="card-container">
         <h3>${restaurant.name}</h3>

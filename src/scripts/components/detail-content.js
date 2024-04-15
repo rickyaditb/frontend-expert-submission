@@ -83,7 +83,9 @@ class DetailContent extends HTMLElement {
     <section id="main-content" class="container detail-content" tabindex="0">
       <div class="detail-thumb-container">
         <div class="detail-thumb">
-          <img src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" alt="Gambar Restoran ${this._restaurant.name}" class="detail-thumb-img">
+          <source media="(max-width: 600px)" srcset="${`${CONFIG.BASE_IMAGE_URL}small/${this._restaurant.pictureId}`}">
+          <source media="(max-width: 1280px)" srcset="${`${CONFIG.BASE_IMAGE_URL}medium/${this._restaurant.pictureId}`}">
+          <img class="detail-thumb-img" src="${`${CONFIG.BASE_IMAGE_URL}large/${this._restaurant.pictureId}`}" alt="Gambar Restoran ${this._restaurant.name}">
         </div>
         <div id="likeButtonContainer"></div>
       </div>

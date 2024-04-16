@@ -1,3 +1,5 @@
+import CONFIG from '../globals/config';
+
 class Toast {
   static lastToast = null;
 
@@ -8,6 +10,8 @@ class Toast {
   }
 
   show() {
+    if (CONFIG.TOAST === false) return;
+
     // Clear the last toast if it exists
     if (Toast.lastToast) {
       Toast.lastToast.hide();
@@ -25,6 +29,7 @@ class Toast {
   }
 
   hide() {
+    if (CONFIG.TOAST === false) return;
     if (this.toastElement) {
       this.toastElement.remove();
       this.toastElement = null;

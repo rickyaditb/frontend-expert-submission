@@ -56,7 +56,7 @@ class AppHeader extends HTMLElement {
         </button>
         <ul>
           <li><a href="/" tabindex="-1" id="mobile-home">Home</a></li>
-          <li><a href="#" tabindex="-1" id="mobile-favorite">Favorite</a></li>
+          <li><a href="/#/favorite" tabindex="-1" id="mobile-favorite">Favorite</a></li>
           <li><a href="https://github.com/rickyaditb" target="_blank" tabindex="-1" id="mobile-about">About Us</a></li>
         </ul>
       </section>
